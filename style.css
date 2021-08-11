@@ -31,14 +31,17 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
+.group img {
+  width: 100%;
+}
 
 .group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .item {
@@ -56,6 +59,7 @@ header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
+  flex-direction: row;
 }
 
 .logo {
@@ -65,22 +69,31 @@ header {
 }
 
 header nav ul li {
+  justify-content: center;
   list-style-type: none;
+  flex-direction: row;
+  display: flex;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+  flex-direction: row;
+  display: flex;
 }
 
 header nav ul li a:hover {
   color: #bdbdbd;
   text-decoration: none;
 }
-
+.menu {
+  display: flex;
+  flex-direction: row;
+}
 /* -------  Search Form ------- */
 form {
+  justify-content: flex-end;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -91,6 +104,7 @@ form label {
 
 form select,
 form input {
+  justify-content: flex-end;
   margin-bottom: 20px;
   width: 180px;
 }
@@ -116,4 +130,23 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
+@media all and (min-width: 600px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  header h1 {
+      font-size: 52px;
+    margin: 14px 0;
+    padding-top: 0;
+  }
+
+  header nav {
+    margin-top: 14px;
+  }
+  header nav ul li a:hover { 
+    color: #bdbdbd;
+  }
+}
